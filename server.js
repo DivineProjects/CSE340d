@@ -9,7 +9,7 @@ const expressLayouts = require("express-ejs-layouts")
 const express = require("express")
 const env = require("dotenv").config()
 const app = express()
-const static = require("./routes/static")
+const static = require("./routes/static") // contains routes directory to css, js and images 
 
 /* ***********************
  * View Egine and Templates
@@ -23,6 +23,10 @@ app.set("layout", "./layouts/layout") // not at views root
  * Routes
  *************************/
 app.use(static)
+// index route
+app.get("/", function(req,res) {
+  res.render("index", {title: "Home"})
+})
 
 /* ***********************
  * Local Server Information
