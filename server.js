@@ -10,6 +10,7 @@ const express = require("express")
 const env = require("dotenv").config()
 const app = express()
 const static = require("./routes/static") // contains routes directory to css, js and images 
+const baseController = require("./controllers/baseController")
 
 /* ***********************
  * View Egine and Templates
@@ -24,9 +25,14 @@ app.set("layout", "./layouts/layout") // not at views root
  *************************/
 app.use(static)
 // index route
-app.get("/", function(req,res) {
-  res.render("index", {title: "Home"})
-})
+app.get("/", baseController.buildHome)
+// app.get("/", function(req,res) {
+//   res.render("index", {title: "Home"})
+// })
+// const baseController = require("../controllers/baseController");
+
+
+
 
 /* ***********************
  * Local Server Information
