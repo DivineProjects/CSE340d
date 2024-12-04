@@ -63,6 +63,7 @@ body{
 a {
   text-decoration: none;
 }
+
 /* headers.js */
 header {
   display: flex;
@@ -212,6 +213,125 @@ main {
   text-align: center;
 }
 
+
+/* Basic styling for the list */
+#inv-display {
+  display: flex;             /* Flex container for the grid items */
+  flex-wrap: wrap;           /* Allow items to wrap in new lines */
+  justify-content: center;   /* Center items horizontally */
+  gap: 20px;                 /* Add space between items */
+  padding: 10px;
+  margin: 10px 0;
+}
+
+/* Styling for each vehicle item */
+#inv-display li {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  width: 280px;              /* Set a base width for each item */
+  max-width: 100%;
+}
+
+/* Hover effect for each vehicle */
+#inv-display li:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Styling for vehicle image */
+#inv-display li img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Ensure the image fits well */
+  /* border-bottom: 1px solid #ddd; */
+}
+
+/* Container for vehicle name and price */
+.namePrice {
+  padding: 15px;
+  text-align: center;
+}
+
+/* Vehicle name styling */
+.namePrice h2 {
+  font-size: 1.2em;
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Vehicle price styling */
+.namePrice span {
+  font-size: 1.4em;
+  font-weight: bold;
+  /* color: #28a745; */
+  display: block;
+  margin-top: 5px;
+}
+
+/* Styling for the "no matching vehicles" message */
+.notice {
+  font-size: 1.2em;
+  color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  padding: 20px;
+}
+
+/* Grid Container for the vehicle image and details */
+.vehicle-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns for larger screens */
+  gap: 20px; /* Space between columns */
+  max-width: 1200px;
+  width: 100%; /* Take full width within the max-width */
+  padding: 20px;
+  /* background-color: white; */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+}
+
+/* Image styling */
+.vehicle-image {
+  display: flex;
+  justify-content: center;
+}
+
+.vehicle-image img {
+  width: 100%; /* Responsive image */
+  max-width: 500px; /* Image max width */
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Details section styling */
+.vehicle-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.vehicle-details h2 {
+  font-size: 24px;
+  /* color: #333; */
+  margin-bottom: 15px;
+}
+
+.vehicle-details p {
+  font-size: 16px;
+  /* color: #555; */
+  margin: 8px 0;
+}
+
+.vehicle-details strong {
+  font-weight: bold;
+}
+
+
 @media (min-width: 780px){
   .information {
       display: grid;
@@ -222,4 +342,45 @@ main {
    
   }
 
+}
+
+/* Centering for smaller screens and responsiveness */
+@media (max-width: 779px) {
+  h1 {
+    font-size: 1.75em; /* Slightly smaller on tablets */
+  }
+  h2 {
+    font-size: 1.4em; /* Slightly smaller on tablets */
+  }
+  h3 {
+    font-size: 1.2em; /* Slightly smaller on tablets */
+  }
+
+  .vehicle-grid {
+    grid-template-columns: 1fr; /* Stack columns on small screens */
+    padding: 15px;
+  }
+
+  .vehicle-details h2 {
+    font-size: 20px;
+  }
+
+  .vehicle-details p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5em; /* Adjust h1 for small screens */
+  }
+  h2 {
+    font-size: 1.2em; /* Adjust h2 for small screens */
+  }
+  h3 {
+    font-size: 1.1em; /* Adjust h3 for small screens */
+  }
+  .vehicle-image img {
+    max-width: 100%; /* Image takes full width on small screens */
+  }
 }
