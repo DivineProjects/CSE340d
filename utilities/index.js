@@ -55,7 +55,38 @@ Util.buildClassificationGrid = async function(data){
       grid += '<p class="notice">Sorry, no matching vehicles could be found.</p>'
     }
     return grid
+}
+
+Util.buildInventorySingleGrid = async function (data) {
+  let grid
+  try {
+    if (data && Object.keys(data).length> 0) {
+      grid = `
+              <div class="vehicle-grid">
+                <div class="vehicle-image">
+                  <a href="../../inv/detail/${data.inv_id}" 
+                    title="View ${data.inv_make} ${data.inv_model} details">
+                    <img src="${data.inv_thumbnail}" 
+                        alt="Image of ${data.inv_make} ${data.inv_model} on CSE Motors" />
+                  </a>
+                </div>
+                <section class="vehicle-details">
+                  <h2>Vehicle Details</h2>
+                  <p><strong>Price:</strong> $${new Intl.NumberFormat('en-US').format(Number(data.inv_price))}</p>
+                  <p><strong>Mileage:</strong> ${new Intl.NumberFormat('en-US').format(data.inv_miles)}</p>
+                  <p><strong>Description:</strong> ${data.inv_description}</p>
+                </section>
+              </div>
+            `
+    } else {
+      grid = '<p class="notice">Sorry, no matching vehicles could be found.</p>'
+    }
+  } catch (error) {
+    grid = '<p class="notice">An error occurred while loading vehicle details. Please try again later.</p>'
   }
+  
+  return grid
+}
 
 /* ****************************************
  * Middleware For Handling Errors
@@ -63,5 +94,12 @@ Util.buildClassificationGrid = async function(data){
  * General Error Handling
  **************************************** */
 Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
+
+/* ****************************************
+ * Middleware For Interntinal 500 Errors
+ * 
+ * Error in the Footer
+ **************************************** */
+Util.intentionalErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
 
 module.exports = Util
