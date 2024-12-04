@@ -63,6 +63,7 @@ body{
 a {
   text-decoration: none;
 }
+
 /* headers.js */
 header {
   display: flex;
@@ -266,7 +267,7 @@ main {
 .namePrice span {
   font-size: 1.4em;
   font-weight: bold;
-  color: #28a745;
+  /* color: #28a745; */
   display: block;
   margin-top: 5px;
 }
@@ -277,6 +278,57 @@ main {
   color: rgba(0, 0, 0, 0.8);
   text-align: center;
   padding: 20px;
+}
+
+/* Grid Container for the vehicle image and details */
+.vehicle-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns for larger screens */
+  gap: 20px; /* Space between columns */
+  max-width: 1200px;
+  width: 100%; /* Take full width within the max-width */
+  padding: 20px;
+  /* background-color: white; */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+}
+
+/* Image styling */
+.vehicle-image {
+  display: flex;
+  justify-content: center;
+}
+
+.vehicle-image img {
+  width: 100%; /* Responsive image */
+  max-width: 500px; /* Image max width */
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Details section styling */
+.vehicle-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.vehicle-details h2 {
+  font-size: 24px;
+  /* color: #333; */
+  margin-bottom: 15px;
+}
+
+.vehicle-details p {
+  font-size: 16px;
+  /* color: #555; */
+  margin: 8px 0;
+}
+
+.vehicle-details strong {
+  font-weight: bold;
 }
 
 
@@ -290,4 +342,45 @@ main {
    
   }
 
+}
+
+/* Centering for smaller screens and responsiveness */
+@media (max-width: 779px) {
+  h1 {
+    font-size: 1.75em; /* Slightly smaller on tablets */
+  }
+  h2 {
+    font-size: 1.4em; /* Slightly smaller on tablets */
+  }
+  h3 {
+    font-size: 1.2em; /* Slightly smaller on tablets */
+  }
+
+  .vehicle-grid {
+    grid-template-columns: 1fr; /* Stack columns on small screens */
+    padding: 15px;
+  }
+
+  .vehicle-details h2 {
+    font-size: 20px;
+  }
+
+  .vehicle-details p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5em; /* Adjust h1 for small screens */
+  }
+  h2 {
+    font-size: 1.2em; /* Adjust h2 for small screens */
+  }
+  h3 {
+    font-size: 1.1em; /* Adjust h3 for small screens */
+  }
+  .vehicle-image img {
+    max-width: 100%; /* Image takes full width on small screens */
+  }
 }
