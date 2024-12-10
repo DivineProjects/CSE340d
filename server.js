@@ -12,6 +12,7 @@ const app = express()
 const static = require("./routes/static") // contains routes directory to css, js and images 
 const baseController = require("./controllers/baseController")
 const inventoryRoute = require("./routes/inventoryRoute")
+const accountRoute = require("./routes/accountRoute")
 const errorController = require("./controllers/errorController")
 const utilities = require("./utilities")
 const session = require("express-session")
@@ -56,6 +57,8 @@ app.get("/", utilities.handleErrors(baseController.buildHome))
 app.use("/inv", utilities.handleErrors(inventoryRoute))
 // route that triggers the 500 error
 app.use('/trigger-error', utilities.intentionalErrors(errorController));
+//account login page
+app.use("/account", utilities.handleErrors(accountRoute))
 
 
 // File Not Found Route - must be last route in list

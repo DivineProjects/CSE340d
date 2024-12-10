@@ -331,6 +331,77 @@ main {
   font-weight: bold;
 }
 
+/* Form container styling */
+.form-div{
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: rgba(240, 240, 240, 1); /* Light gray background */
+}
+
+.form-container {
+  /* background-color: rgba(255, 255, 255, 0.9); White background, slight transparency */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow with transparency */
+  width: 100%;
+  max-width: 400px; /* Set max width for larger screens */
+  
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgba(0, 0, 0, 0.8); /* Dark text */
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: rgba(0, 0, 0, 0.7); /* Slightly transparent black */
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(200, 200, 200, 1); /* Light gray border */
+  border-radius: 4px;
+  background-color: rgba(240, 240, 240, 1); /* Light gray background for inputs */
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--deep-blue);
+  color: rgba(255, 255, 255, 1); /* White text */
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgba(69, 160, 73, 1); /* Darker green on hover */
+}
+
+.form-container p {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.7); /* Slightly transparent black */
+}
+
+.form-container a {
+  /* color: rgba(0, 123, 255, 1); Bootstrap blue */
+  text-decoration: none;
+}
+
+.form-container a:hover {
+  text-decoration: underline;
+}
+
 
 @media (min-width: 780px){
   .information {
@@ -368,6 +439,17 @@ main {
   .vehicle-details p {
     font-size: 14px;
   }
+  .form-container {
+    padding: 20px; /* Adjust padding on smaller screens */
+  }
+
+  input {
+      padding: 10px; /* Increase padding for easier interaction on small screens */
+  }
+
+  button {
+      padding: 12px; /* Make button larger for easier tapping */
+  }
 }
 
 @media (max-width: 480px) {
@@ -382,5 +464,17 @@ main {
   }
   .vehicle-image img {
     max-width: 100%; /* Image takes full width on small screens */
+  }
+  .form-container {
+    max-width: 100%; /* Full width on very small screens */
+    padding: 15px; /* Adjust padding further */
+  }
+
+  h2 {
+      font-size: 18px; /* Smaller heading text */
+  }
+
+  input, button {
+      font-size: 14px; /* Smaller input and button text */
   }
 }
