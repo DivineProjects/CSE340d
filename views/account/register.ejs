@@ -2,23 +2,25 @@
 <%- messages() %>
 <div class="form-div">
     <div class="form-container">
-        <form action="/register" method="post">
+        <form action="/account/register" method="post">
+            <p>All fields are required</p>
             <!-- First Name Input -->
-            <label for="first-name">First Name:</label>
-            <input type="text" id="first-name" name="first-name" required placeholder="Enter your first name" data-trail="first-name"><br>
+            <label for="account_firstname">First Name:</label>
+            <input type="text" id="account_firstname" name="account_firstname" required placeholder="Enter your first name" data-trail="account_firstname"><br>
 
             <!-- Last Name Input -->
-            <label for="last-name">Last Name:</label>
-            <input type="text" id="last-name" name="last-name" required placeholder="Enter your last name" data-trail="last-name"><br>
+            <label for="account_lastname">Last Name:</label>
+            <input type="text" id="account_lastname" name="account_lastname" required placeholder="Enter your last name" data-trail="account_lastname"><br>
 
             <!-- Email Address Input -->
-            <label for="email">Email Address:</label>
-            <input type="email" id="email" name="email" required placeholder="Enter your email address" data-trail="email"><br>
+            <label for="account_email">Email Address:</label>
+            <input type="email" id="account_email" name="account_email" required placeholder="Enter your email address" data-trail="account_email"><br>
 
             <!-- Password Input -->
-            <label for="password">Password :</label>
-            <input type="password" id="password" name="password" required placeholder="Enter your password" data-trail="password"><br>
-            <label class="pwd-require" for="password">(12+ characters, 1 capital letter, 1 number, 1 special character):</label>
+            <label for="account_password">Password :</label>
+            <span>Passwords must be at least 12 characters and contain at least 1 number, 1 capital letter and 1 special character</span> 
+            <input type="password" id="account_password" name="account_password" required placeholder="Enter your password" data-trail="account_password"
+            pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$"><br>
 
             <!-- Toggle Password Visibility -->
             <button type="button" onclick="togglePassword()">Show/Hide Password</button><br><br>

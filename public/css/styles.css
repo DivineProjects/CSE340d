@@ -394,9 +394,10 @@ button:hover {
   color: rgba(0, 0, 0, 0.7); /* Slightly transparent black */
 }
 
-.pwd-require{
-  color: rgb(179, 75, 75);
+.form-container span{
+  color: rgba(179, 75, 75, 0.9);
   font-size: 0.8rem;
+  margin: 0 5px;
 }
 .form-container a {
   /* color: rgba(0, 123, 255, 1); Bootstrap blue */
@@ -406,7 +407,13 @@ button:hover {
 .form-container a:hover {
   text-decoration: underline;
 }
-
+/* style for invalid form input */
+/* input:required:invalid {
+  background-color: rgba(179, 75, 75, 0.6);
+ } */
+ input:required:valid{
+  background-color: rgba(69, 160, 73, 1);
+ }
 
 @media (min-width: 780px){
   .information {
