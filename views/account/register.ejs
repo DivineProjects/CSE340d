@@ -1,0 +1,42 @@
+<h1><%- title %></h1>
+<%- messages() %>
+<div class="form-div">
+    <div class="form-container">
+        <form action="/register" method="post">
+            <!-- First Name Input -->
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" required placeholder="Enter your first name" data-trail="first-name"><br>
+
+            <!-- Last Name Input -->
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" required placeholder="Enter your last name" data-trail="last-name"><br>
+
+            <!-- Email Address Input -->
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email address" data-trail="email"><br>
+
+            <!-- Password Input -->
+            <label for="password">Password :</label>
+            <input type="password" id="password" name="password" required placeholder="Enter your password" data-trail="password"><br>
+            <label class="pwd-require" for="password">(12+ characters, 1 capital letter, 1 number, 1 special character):</label>
+
+            <!-- Toggle Password Visibility -->
+            <button type="button" onclick="togglePassword()">Show/Hide Password</button><br><br>
+
+            <!-- Submit Button -->
+            <button type="submit">Register</button>
+        </form>
+
+        <p>Already have an account? <a href="/account/login">Login here</a></p>
+    </div>
+
+</div>
+
+<script>
+    // Function to toggle password visibility
+    function togglePassword() {
+        const passwordInput = document.getElementById('password');
+        const type = passwordInput.type === 'password' ? 'text' : 'password';
+        passwordInput.type = type;
+    }
+</script>

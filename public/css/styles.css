@@ -343,10 +343,10 @@ main {
 }
 
 .form-container {
-  /* background-color: rgba(255, 255, 255, 0.9); White background, slight transparency */
+  background-color: rgba(255, 255, 255, 0.9); /* White background, slight transparency */
   padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Slight shadow with transparency */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow with transparency */
   width: 100%;
   max-width: 400px; /* Set max width for larger screens */
   
@@ -389,10 +389,15 @@ button:hover {
 }
 
 .form-container p {
+  margin-top: 1rem;
   text-align: center;
   color: rgba(0, 0, 0, 0.7); /* Slightly transparent black */
 }
 
+.pwd-require{
+  color: rgb(179, 75, 75);
+  font-size: 0.8rem;
+}
 .form-container a {
   /* color: rgba(0, 123, 255, 1); Bootstrap blue */
   text-decoration: none;
