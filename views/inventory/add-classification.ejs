@@ -1,0 +1,31 @@
+<h1><%- title %></h1>
+<%- messages() %>
+<% if (errors) { %>
+    <ul class="notice">
+    <% errors.array().forEach(error => { %>
+        <li><%= error.msg %></li>
+    <%  }) %>
+   </ul>
+  <% } 
+%>
+<div class="form-div">
+    <div class="form-container">
+
+        <form action="/inv/add-classification" method="post" id="classificationForm">
+            <span>Only alphabetic characters allowed, at least 3 characters long, and no spaces</span> 
+
+            <label for="classification_name">Add Classification:</label>
+            <input type="text" id="classification_name" name="classification_name" required 
+            placeholder="Sedan"
+            pattern="^[A-Za-z]{3,}$" 
+            minlength="3"
+            value="<%= locals.classification_name %>">
+            <br>
+            
+            <button type="submit">Submit</button>
+        </form>
+    
+        <p> <a href="/inv">Back to Inventory Management?</a></p>
+    </div>
+</div>
+
