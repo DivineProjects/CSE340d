@@ -7,6 +7,7 @@
  *************************/
 const expressLayouts = require("express-ejs-layouts")
 const express = require("express")
+const cookieParser = require("cookie-parser")
 const env = require("dotenv").config()
 const app = express()
 const static = require("./routes/static") // contains routes directory to css, js and images 
@@ -70,6 +71,7 @@ app.use(async (req, res, next) => {
   next({status: 404, message: 'Sorry, we appear to have lost that page.'})
 })
 
+
 /* ***********************
 * Express Error Handler
 * Place after all other middleware
@@ -87,6 +89,8 @@ app.use(async (err, req, res, next) => {
   })
 })
 
+app.use(cookieParser())
+
 
 /* ***********************
  * Local Server Information
@@ -100,4 +104,4 @@ const host = process.env.HOST
  *************************/
 app.listen(port, () => {
   console.log(`app listening on ${host}:${port}`)
-})
+}) 
