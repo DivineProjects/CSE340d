@@ -44,6 +44,7 @@ app.use(function(req, res, next){
   next()
 })
 
+
 /* ***********************
  * View Egine and Templates
  *************************/
@@ -91,6 +92,8 @@ app.use(async (err, req, res, next) => {
 
 app.use(cookieParser())
 
+// checking the JWT
+app.use(utilities.checkJWTToken)
 
 /* ***********************
  * Local Server Information
