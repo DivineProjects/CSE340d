@@ -64,7 +64,7 @@ app.use("/inv", utilities.handleErrors(inventoryRoute))
 // route that triggers the 500 error
 app.use('/trigger-error', utilities.intentionalErrors(errorController));
 //account login page
-app.use("/account", utilities.handleErrors(accountRoute))
+// app.use("/account", utilities.handleErrors(accountRoute))
 
 
 // File Not Found Route - must be last route in list
